@@ -1,0 +1,1 @@
+source ~/venvs/jupyter312/bin/activate
