@@ -4,48 +4,45 @@ import os
 sys.path.append(os.path.abspath(".."))
 from package import *
 
-
-
 import time
-
 
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
 
-
 import matplotlib.pyplot as plt
-
 
 from IPython.display import clear_output, display
 
 
 
-
-
-
-
-
-
-
-
 sliding_windows = 0.
 
-context_window = 128
+context_window = 256
 batch_size = 64
 
 d_emb = 512
-nb_heads = 4
+nb_heads = 8
 d_k = d_emb // nb_heads
 
-mlp_multiplication=3
+mlp_multiplication=4
 
 nb_layers = 8
 
-device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
-#device = torch.device("cpu")
-print(device)
+
+name = input()
+
+
+if torch.backends.mps.is_available():
+    device = torch.device("mps")
+elif torch.cuda.is_available():
+    device = torch.device("cuda")
+else:
+    device = torch.device("cpu")
+
+print("Using device:", device)
+
 
 
 tokenizer = SingleCharTokenizer()

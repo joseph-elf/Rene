@@ -2,7 +2,7 @@
 USERNAME=ubuntu
 
 # IP of the EC2 instance
-IP=16.171.14.230
+IP=13.51.169.78
 
 # SSH key file
 SSH_FILE=~/.ssh/aws-rene.pem
