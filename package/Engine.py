@@ -122,7 +122,6 @@ class Engine:
         sys.stdout.flush()
 
     def plot_losses(self,losses,fig,ax):
-        
 
         ax.clear()
         ax.plot(losses)
@@ -152,6 +151,7 @@ class Engine:
 
             # If context too long, crop to block_size
             block_size = 128
+            block_size = self.model.context_window
             tokens_cond = tokens[:, -block_size:]
 
             # Forward pass
