@@ -88,7 +88,7 @@ engine = Engine(gpt,tokenizer,device)
 print(len(iter(loader)))
 
 
-engine.train(loader,1,5000,100,print_frequency=10)
+engine.train(loader,1,2000,30000,print_frequency=10)
 engine.save_model("training_historic/final.w")
 
 engine.save("training_historic/final.e")
